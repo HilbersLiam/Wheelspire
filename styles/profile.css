@@ -1,0 +1,173 @@
+.profile{
+    display: flex;
+    border: 1px solid var(--color-accent-blue);
+    border-radius: 8px;
+    box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+          overflow: hidden;
+}
+.profile-container{
+    width: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+}
+.profile-nav{
+    width: 20%;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--color-accent-blue);
+    overflow: hidden;
+}
+.profile-nav nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.nav-links{
+    display: flex;
+    padding: 1rem;
+    gap: 10px;
+    color: var(--text-lighter-color);
+    transition: 0.3s;
+}
+.profile-nav a{
+    text-decoration: none;
+}
+
+.nav-links:hover{
+    background-color: var(--color-accent-blue);
+    cursor: pointer;
+}
+.nav-links-active{
+    display: flex;
+    border-right: 2px solid var(--color-primary);
+    border-radius: 2px;
+    color: var(--text-color);
+    gap: 10px;
+    text-decoration: none;
+    padding: 13px 15px;
+    transition: 0.3s;
+}
+.nav-links-logout{
+    display: flex;
+    padding: 1rem;
+    margin-top: auto;
+    gap: 10px;
+    color: var(--text-lighter-color);
+    transition: 0.3s;
+    border-top: 2px solid var(--color-accent-blue);
+}
+.nav-links-logout:hover{
+    background-color: var(--color-accent-blue);
+    cursor: pointer;
+}
+.welcome-back{
+    color: var(--text-color);
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+.profile-header{
+    color: var(--text-color);
+    font-size: 1.25rem;
+    margin: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-accent-blue);
+        font-family: 'Satoshi';
+    font-weight: 600;
+}
+
+
+/* Profile form CSs */
+.my-profile-section{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.account-security-section{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.password-section{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.edit-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+.edit-input input{
+    width: 100%;
+    color: var(--text-color);
+}
+.edit-input label{
+    color: var(--text-lighter-color);
+    font-size: 0.75rem;
+    font-family: 'Satoshi';
+    font-weight: 600;
+}
+
+.profile-container form{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.profile-input{
+    background-color: var(--color-accent-blue);
+    margin-top: 6px;
+    border-radius: 2px;
+    border: none;
+    border: 2px solid transparent;
+    outline: none;
+    padding: 0.5rem;
+    width: 25%;
+}
+.edit-input::placeholder{
+    color: var(--text-lighter-color);
+    padding-left: 15px;
+}
+.edit-input:focus::placeholder{
+    color: var(--text-color);
+    padding-left: 15px;
+}
+
+.edit-input:focus {
+  border: 2px solid var(--color-primary);
+}
+.profile-container input[type='submit']{
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    font-family: 'Satoshi';
+    font-weight: 600;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.profile-container input[type='submit']:hover{
+    border-radius: 15px;
+}
+.success-message{
+    color: var(--text-color);
+    font-size: 0.75rem;
+    font-weight: 900;
+    background-color: var(--color-success);
+    border-radius: 6px;
+    padding: 0.5rem;
+}
+.unsuccess-message{
+    color: var(--text-color);
+    font-size: 0.75rem;
+    font-weight: 900;
+    background-color: var(--color-alerts);
+    border-radius: 6px;
+    padding: 0.5rem;
+}

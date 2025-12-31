@@ -1,0 +1,128 @@
+/* Signup form CSS also used by login form. */
+@media only screen and (max-width: 600px) {
+    .signup-container{
+    width: 900px;
+    height: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:100px;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+    border-radius: 20px;
+     box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+}
+}
+.signup-container{
+    border: 1px solid var(--color-accent-blue);
+    width: 900px;
+    height: 700px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap:100px;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+    border-radius: 20px;
+     box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+}
+.signup-car{
+    object-fit:contain;
+    height:400px;
+    width:400px;
+}
+
+.signup-form h2{
+    color:var(--text-color);;
+}
+.signup-form .form-submit{
+    background-color: var(--color-accent-blue);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+
+}
+.signup-form .form-submit:hover{
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+}
+.signup-image p{
+    color: var(--text-color);
+}
+.signup-form input{
+    color: var(--text-color);
+    width:100%;
+    padding: 13px 30px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--color-accent-blue);;
+    background-color: var(--bg-secondary);
+}
+.signup-form input::placeholder{
+    color: var(--text-lighter-color);
+    padding-left: 15px;
+}
+.signup-form input:focus::placeholder{
+    color: var(--text-color);
+    padding-left: 15px;
+}
+
+.signup-form input:focus {
+  border-bottom: 2px solid var(--color-primary);
+}
+.signup-form label{
+    color: var(--text-color);;
+    margin-bottom: 50px;
+}
+.signup-form .username{
+    background-image: url('../Assets/Signup-icon.svg');
+    background-position: 0px 10px;
+    background-repeat: no-repeat;
+}
+.signup-form .email{
+    background-image: url('../Assets/Signup-email.svg');
+    background-position: 0px 10px;
+    background-repeat: no-repeat;
+}
+.signup-form .password{
+    background-image: url('../Assets/Signup-password.svg');
+    background-position: 0px 10px;
+    background-repeat: no-repeat;
+}
+.signup-form .password-again{
+    background-image: url('../Assets/Signup-password-again.svg');
+    background-position: 0px 10px;
+    background-repeat: no-repeat;
+}
+.login-link{
+    color: var(--color-primary);
+}
+
+.signup-image  p{
+    padding-left: 50px;
+}
+
+.error{
+    margin: 0;
+    font-size: 12px;
+    color: var(--color-alerts);
+    display: block;
+}
+
+.success{
+    margin: 0;
+    font-size: 12px;
+    color: var(--color-primary);
+    display: block;
+}
+

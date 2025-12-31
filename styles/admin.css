@@ -1,0 +1,317 @@
+/* ---------- Fonts ---------- */
+
+/* Black weight for the Satoshi font */
+@font-face {
+    font-family: 'Satoshi';
+    src: url(../fonts/Satoshi-Black.otf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Regular weight for the Satoshi font */
+@font-face {
+    font-family: 'Satoshi';
+    src: url(../fonts/Satoshi-Regular.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* ---------- Global Variables ---------- */
+
+/* Define color variables for consistent theming */
+:root {
+    --text-color: #FFFFFF;
+    --text-lighter-color: #b8b8b8;
+    --bg-primary: #061231;
+    --bg-secondary: #161c3d;
+    --form-bg: #0f1733;
+    --accent: #00D1FF;
+    --dark-accent: #0099CC;
+    --color-alerts: #ff292c;
+    --border-color: #2a3a6d;
+}
+
+/* ---------- Global Styling ---------- */
+
+/* Base body style for layout and typography */
+body {
+    margin: 0;
+    font-family: 'Satoshi';
+    font-weight: 600;
+    background-color: var(--bg-primary);
+}
+
+/* ---------- Header ---------- */
+
+/* Main header bar at the top */
+.header {
+    margin: 0;
+    background-color: var(--bg-secondary);
+    width: 100%;
+    height: 75px;
+}
+
+/* ---------- Sidebar Navigation ---------- */
+
+/* Sidebar container for navigation links */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 0;
+    padding-left: 1rem;
+    width: 225px;
+    background-color: var(--bg-secondary);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+/* Logo inside the sidebar */
+.sidebar-logo {
+    width: 150px;
+    height: auto;
+    padding: 1rem;
+    padding-bottom: 6rem;
+}
+
+/* Active navigation link (currently selected page) */
+.active-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: var(--text-color);
+    background-color: var(--bg-primary);
+    margin-left: 1rem;
+    border-radius: 1rem 0px 0px 1rem;
+}
+
+/* Default navigation link style */
+.link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: var(--text-color);
+    transition: 0.5s;
+}
+
+/* Hover effect for navigation links */
+.link:hover {
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    margin-left: 1rem;
+    border-radius: 1rem 0px 0px 1rem;
+}
+
+/* ---------- Content Area ---------- */
+
+/* Container for the main page content (beside the sidebar) */
+div.content {
+    margin-left: 225px;
+    padding: 5rem;
+    height: 1000px;
+}
+
+/* Headings inside the content area */
+.content h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.content h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+/* ---------- Analytics Section ---------- */
+
+/* Flex container holding all analytics cards */
+.analytics-container {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Ensure each analytics card takes up 1/3 of the available width */
+.analytics-container>* {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(33.33% - 1rem);
+}
+
+/* Individual analytics card */
+.analytics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    width: 600px;
+    height: 200px;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* Circle background that wraps the icon inside the analytics card */
+.circle {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #00D1FF, #0099CC);
+    border-radius: 50%;
+}
+
+/* Icon inside the totals circle */
+.totals-icon {
+    color: var(--accent);
+    height: 40px;
+    width: auto;
+}
+
+/* Totals text styles (number and description) */
+.totals-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.totals-text h4 {
+    color: var(--text-color);
+    margin: 0;
+}
+
+.totals-text p {
+    color: var(--text-lighter-color);
+    margin: 0;
+}
+
+/* ---------- Table Styling ---------- */
+
+/* Table container style for analytics or lists */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* Table header cells */
+th {
+    background-color: var(--dark-accent);
+    color: var(--text-color);
+    text-align: left;
+}
+
+/* Alternate row colors for better readability */
+tr:nth-child(even) {
+    background-color: var(--bg-secondary);
+    color: var(--text-lighter-color);
+}
+
+tr:nth-child(odd) {
+    background-color: var(--bg-primary);
+    color: var(--text-lighter-color);
+}
+
+/* Table cells (header and data) padding */
+td,
+th {
+    padding: 12px 16px;
+}
+
+/* ---------- Buttons ---------- */
+
+/* Edit product button style */
+.edit-product {
+    font-family: 'Satoshi';
+    font-weight: 600;
+    color: var(--text-color);
+    background: var(--dark-accent);
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+/* Hover state for edit product button */
+.edit-product:hover {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: var(--text-color);
+    background: var(--accent);
+}
+
+/* ---------- Product Form ---------- */
+
+/* Form container for editing product details */
+.product-form {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 6px;
+    width: 50%;
+    border: 1px solid var(--border-color);
+}
+
+/* Layout for product form fields */
+.product-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Labels inside the product form */
+.product-form label {
+    color: var(--text-color);
+    font-size: 1.25rem;
+}
+
+/* Input fields inside the product form */
+.product-form input {
+    color: var(--text-color);
+    outline: none;
+    background-color: var(--form-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Highlight border when input is focused */
+.product-form input:focus {
+    border: 1px solid var(--accent);
+}
+
+/* Submit button inside the product form */
+.product-form input[type="submit"] {
+    font-family: 'Satoshi';
+    font-weight: 600;
+    color: var(--text-color);
+    background: var(--dark-accent);
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+/* Hover state for product form submit button */
+.product-form input[type="submit"]:hover {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: var(--text-color);
+    background: var(--accent);
+}

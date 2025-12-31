@@ -1,0 +1,496 @@
+@font-face{
+    font-family: 'Satoshi';
+    src: url(../fonts/Satoshi-Black.otf);
+    font-weight: 900;
+    font-style: normal;
+} 
+@font-face{
+    font-family: 'Satoshi';
+    src: url(../fonts/Satoshi-Regular.otf);
+    font-weight: 600;
+    font-style: normal;
+} 
+
+/* Main CSS to add space from the top so the navbar that remains fixed doesn't block anything*/
+main{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin: 0;
+}
+/* Body CSS setting the font*/
+body{
+    margin: 0;
+    background-color: var(--bg-primary);
+    font-family: 'Satoshi';
+    font-weight: 600;
+}
+
+/* Typography */
+/* All font-size set with a ratio of 1.250 starting at 1 rem(16px) to keep consistency */
+h1{
+    font-size: 3.815rem;
+    line-height: 110%;
+    letter-spacing: -2%;
+}
+h2{
+    font-size: 3.052rem;
+    line-height: 110%;
+    letter-spacing: -2%;
+}
+h3{
+    font-size: 2.441rem;
+    line-height: 130%;
+    letter-spacing: -1.5%;
+}
+h4{
+    font-size: 1.953rem;
+    line-height: 130%;
+    letter-spacing: -1.5%;
+}
+h5{
+    font-size: 1.563rem;
+    line-height: 150%;
+    letter-spacing: -0.5%;
+}
+h6{
+    font-size: 1.25rem;
+    line-height: 150%;
+    letter-spacing: +0.5%;
+}
+p{
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: +0.5%;
+}
+
+.footer{
+    background-color: var(--bg-primary);
+    height: 23vh;
+    border-top: 2px solid var(--color-accent-blue);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.footer-bottom{
+    padding-top: 1rem;
+}
+.footer-bottom p{
+    color: var(--text-color);
+    margin: 0;
+    text-align:  center;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer-links p{
+    color: var(--text-color);
+    border-bottom: 2px solid var(--color-primary);
+}
+.footer-links a{
+    color: var(--text-lighter-color);
+    text-decoration: none;
+    margin-top: 10px;
+}
+.footer-links a:hover{
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+/* Themes */
+/* Light mode theme variables */
+body.lightmode {
+    --text-color: #1b1b1b;
+    --bg-primary: #ffffff;
+    --bg-secondary: #eaeaea;
+    --color-accent-blue: #36353b;
+    --color-primary: #1386eb;
+    --color-primary-hover: #3399f0;
+    --color-alerts: #ff292c;
+    --color-success: #28a745;
+    --bg-gradient: linear-gradient(135deg, #f5f5f5, #eaeaea);
+    --logo: url('/Assets/Logo-lightmode.svg');
+}
+
+/* Dark mode theme variables */
+body.darkmode {
+    --text-color: #FFFFFF;
+    --text-lighter-color: #b8b8b8;
+    --bg-primary: #1b1b1b;
+    --bg-secondary: #252525;
+    --color-accent-blue: #36353b;
+    --color-primary: #1386eb;
+    --color-primary-hover: #3399f0;
+    --color-alerts: #ff292c;
+    --color-success: #28a745;
+    --bg-gradient: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+    --logo: url('/Assets/Logo-darkmode.svg');
+}
+
+/* Blue theme variables */
+body.blue {
+    --text-color: #FFFFFF;
+    --text-lighter-color: #b8c4e0;
+    --bg-primary: #07132b;
+    --bg-secondary: #101b3a;
+    --color-accent-blue: #2d3b64;
+    --color-primary: #2f82ff;
+    --color-primary-hover: #5a9dff;
+    --color-success: #28a745;
+    --color-alerts: #ff4757;
+    --bg-gradient: linear-gradient(135deg, #07132b, #1a2d5e);
+    --logo: url('/Assets/Logo-darkmode.svg');
+}
+/* Logo image in the footer and navbar */
+.logo {
+    height: 50px;
+    width: 150px;
+    background-image: var(--logo);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Hero CSS */
+.hero{
+    background: var(--bg-gradient);
+    height: 50vh;
+    padding-top: 8rem;
+    padding-bottom: 12rem;
+    box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+}
+.hero-content{
+    display: flex;
+    overflow: hidden;
+    gap: 5rem;
+}
+.hero-car{
+    height: 400px;
+    width: auto;
+}
+.hero-text{
+    color:var(--text-color);
+}
+.hero-text h2{
+    margin-bottom: 20px;
+}
+.hero-text p{
+    font-size: 1.25rem;
+}
+.hero-cta{
+    margin-top: 100px;
+    display: flex;
+    gap: 16px;
+}
+
+.products-link{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    height: 35px;
+    width: 200px;
+    padding: 15px;
+}
+.products-link:hover{
+    cursor: pointer;
+    background-color: var(--color-primary-hover);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 40px -10px rgba(19, 134, 235, 0.3),
+            0 0 25px -15px rgba(19, 134, 235, 0.2);
+}
+.signup-link{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    height: 35px;
+    width: 200px;
+    padding: 15px;
+}
+.signup-link:hover{
+    cursor: pointer;
+    background-color: var(--color-primary-hover);
+    color: var(--text-color);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 40px -10px rgba(19, 134, 235, 0.3),
+            0 0 25px -15px rgba(19, 134, 235, 0.2);
+}
+.blue-highlight{
+    background-color: var(--color-primary);
+    color: var(--bg-primary);
+    padding: 0.2rem 1.25rem;
+    border-radius: 4px;
+    border-radius: 20px 500px 20px 20px;
+    border: 1px solid var(--color-primary-hover);
+}
+
+.hero-subheading{
+    margin-top: 0;
+    color: var(--text-lighter-color);
+}
+/* End of Hero CSS */
+
+
+/* Center the page*/
+.center{
+    max-width:1080px;
+    margin: auto;
+}
+
+/* CSS for best selling products section */
+.section-headers{
+    margin-top: 0;
+    color: var(--text-color);
+    border-left: 2px solid var(--color-primary);
+    padding-left: 5px;
+}
+.reviews{
+    padding-bottom: 6rem;
+    height: 50vh;
+    background: var(--bg-gradient);
+}
+.checkout{
+    background: var(--bg-gradient);
+}
+.checkout-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+#checkout-items {
+    max-height: 500px;
+    overflow-y: auto;
+}
+.checkout-items{
+    border: 1px solid var(--color-accent-blue);
+    width: 600px;
+    padding: 1rem;
+    display: flex;
+    background-color: var(--bg-secondary);
+    overflow-y: scroll;
+    overflow: hidden;
+    border-radius: 8px;
+     box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+}
+.cart-content{
+    width: 100%;
+}
+.checkout-total{
+    border: 1px solid var(--color-accent-blue);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    padding: 1rem;
+    top: 0;
+    width: 500px;
+    height: 400px;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+    border-radius: 8px;
+     box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+}
+.checkout-headers{
+    color: var(--text-color);
+    border-bottom: 2px solid var(--color-primary);
+    font-size: 1.75rem;
+}
+.totals{
+    color: var(--text-lighter-color);
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.order-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Satoshi';
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+}
+.order-button:hover{
+    cursor: pointer;
+    background-color: var(--color-primary-hover);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 40px -10px rgba(19, 134, 235, 0.3),
+            0 0 25px -15px rgba(19, 134, 235, 0.2);
+}
+.cart-empty{
+    text-align: center;
+    color: var(--text-color);
+    padding-top: 2rem;
+}
+
+/* ---------------- About Section ---------------- */
+
+.section-headers{
+    margin-top: 0;
+    color: var(--text-color);
+    border-left: 2px solid var(--color-primary);
+    padding-left: 5px;
+}
+.about-container{
+    border: 1px solid var(--color-accent-blue);
+    width: 100%;
+    padding: 1rem;
+    gap:100px;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+}
+.about-headers{
+    color: var(--color-primary);
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin: 0;
+}
+.about-p{
+    color: var(--text-lighter-color);
+    font-size: 1rem;
+    padding-top: 0.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+.about{
+    background: var(--bg-gradient);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* ---------------- Video Section ---------------- */
+
+.videos{
+    background: var(--bg-gradient);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.video-container{
+    border: 1px solid var(--color-accent-blue);
+    width: 805px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    gap:100px;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+}
+.video-header{
+    color: var(--color-primary);
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin: 0;
+}
+.video-p{
+    color: var(--text-lighter-color);
+    font-size: 1rem;
+    padding-top: 0.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+.video-card{
+    display: flex;
+    overflow: hidden;
+    padding-top: 1rem;
+}
+.list-header{
+    color: var(--text-color);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+}
+.why-choose-item{
+    padding: 1rem;
+}
+
+/* ---------------- Wiki Section ---------------- */
+
+.wiki-container{
+    border: 1px solid var(--color-accent-blue);
+    width: 100%;
+    padding: 1rem;
+    gap:100px;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow:0 0 40px -10px rgba(0,0,0,.3),
+      0 0 25px -15px rgba(0,0,0,.2);
+}
+.wiki-headers{
+    color: var(--color-primary);
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin: 0;
+}
+.wiki-p{
+    color: var(--text-lighter-color);
+    font-size: 1rem;
+    padding-top: 0.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+.wiki{
+    background: var(--bg-gradient);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.wiki-links{
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 900;
+}
+.wiki-links:hover{
+    border-bottom: 1px solid var(--color-primary);
+}
+.wiki-img{
+    width: 1000px;
+    height: auto;
+}
+
+/* ---------------- Code Block ---------------- */
+
+pre {
+  background-color: var(--color-accent-blue); /* dark background */
+  color: var(--text-color); /* light text */
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--color-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}

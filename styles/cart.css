@@ -1,0 +1,41 @@
+/* ---------- All CSS code for the cart dropdown ---------- */
+
+/* Container for each item in the cart dropdown */
+.cart-items {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bg-secondary);
+    padding: 10px;
+}
+
+/* Container for the product text (name, details, etc.) */
+.cart-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+
+/* Product image style inside the cart dropdown */
+.cart-images {
+    width: auto;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* Text styling inside the cart item description */
+.cart-text span {
+    padding: 5px;
+    color: white;
+}
+
+/* Container for quantity */
+.quantity-container {
+    display: flex;
+    align-self: last baseline; /* Positions at the baseline of the last item */
+    align-items: center;
+    height: 50px;
+    margin-left: auto; /* Pushes it to the far right */
+    background-color: var(--color-accent-blue);
+    padding: 5px 8px;
+    border-radius: 10px;
+}
