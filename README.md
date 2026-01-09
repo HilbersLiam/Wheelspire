@@ -1,6 +1,6 @@
 # Wheelspire - Full Stack Website
 
-https://wheelspire.page.gd/
+https://wheelspire.liamhilbers.dev/
 
 Wheelspire is an full stack e-commerce website for premium model cars. It allows users to browse products, place orders, and manage their accounts, while admins can view orders, manage products, and track sales.
 
@@ -19,6 +19,7 @@ Wheelspire is an full stack e-commerce website for premium model cars. It allows
 - **MySQL** (Database)
 - **HTML5 / CSS3** (Frontend structure and design)
 - **JavaScript** (Interactivity and dynamic content)
+- **NGINX** (Hosting)
 
 ## Admin Dashboard (Private)
 

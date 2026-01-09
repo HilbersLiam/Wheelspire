@@ -17,22 +17,22 @@ class Orders extends Dbh
         }
     }
 
-    public function addOrderItems($orderid, $productid, $quantity, $option)
+    public function addOrderItems($orderid, $productid, $quantity, $product_option)
     {
-        $query = "INSERT INTO order_items (orderid, productid, quantity, option)
-                  VALUES(:orderid, :productid, :quantity, :option);";
+        $query = "INSERT INTO order_items (orderid, productid, quantity, product_option)
+                  VALUES(:orderid, :productid, :quantity, :product_option);";
         $stmt = $this->connect()->prepare($query);
         $stmt->bindParam(":orderid", $orderid);
         $stmt->bindParam(":productid", $productid);
         $stmt->bindParam(":quantity", $quantity);
-        $stmt->bindParam(":option", $option);
+        $stmt->bindParam(":product_option", $product_option);
         $stmt->execute();
     }
 
     public function getOrders($userid)
     {
         // Join the orders table, order items table and products table by userid to retrieve all the information about the users orders.
-        $query = "SELECT o.orderid, o.ordertotal, o.orderdate, o.total_products, o.status, oi.productid, oi.quantity, oi.option, p.name, p.description, p.price, p.image_url
+        $query = "SELECT o.orderid, o.ordertotal, o.orderdate, o.total_products, o.status, oi.productid, oi.quantity, oi.product_option, p.name, p.description, p.price, p.image_url
                 FROM orders o  
                 INNER JOIN order_items oi ON o.orderid = oi.orderid
                 INNER JOIN products p ON oi.productid = p.productid
@@ -70,7 +70,7 @@ class Orders extends Dbh
                 'description' => $row['description'],
                 'price' => $row['price'],
                 'quantity' => $row['quantity'],
-                'option' => $row['option'],
+                'product_option' => $row['product_option'],
                 'image_url' => $row['image_url'],
             ];
         }

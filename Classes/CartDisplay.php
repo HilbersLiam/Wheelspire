@@ -8,10 +8,10 @@ class CartDisplay extends CartDBHandler
         $cart_items = $this->getCart($userid);
         foreach ($cart_items as $cart_item) { ?>
             <div class="cart-items">
-                <img class="cart-images" src="<?php echo htmlspecialchars($cart_item["image_url"]) ?>" alt="<?php echo htmlspecialchars($cart_item["name"]) ?>" />
+                <img class="cart-images" src="/<?php echo htmlspecialchars($cart_item["image_url"]) ?>" alt="<?php echo htmlspecialchars($cart_item["name"]) ?>" />
                 <div class="cart-text">
                     <span style><?php echo htmlspecialchars($cart_item["name"]) ?></span>
-                    <span style="color: var(--text-lighter-color); font-size: 14px;">Color: <?php echo htmlspecialchars($cart_item["option"]) ?></span>
+                    <span style="color: var(--text-lighter-color); font-size: 14px;">Color: <?php echo htmlspecialchars($cart_item["product_option"]) ?></span>
                     <span style="padding-top: 20px;"><?php echo "$" . htmlspecialchars($cart_item["price"]) ?></span>
                 </div>
                 <div class="quantity-container">

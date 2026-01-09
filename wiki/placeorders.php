@@ -30,7 +30,7 @@
                 </p>
                 <br>
 
-                <img class="wiki-img" src="Assets/cart-image.png" alt="Screenshot showing the cart." />
+                <img class="wiki-img" src="/Assets/cart-image.png" alt="Screenshot showing the cart." />
                 <br>
                 <h3 class="wiki-headers">Step 2: Placing Your Order</h3>
                 <p class="wiki-p">
@@ -38,7 +38,7 @@
                     Once you click <strong> place order </strong>, your order will be placed and will show up under <strong> Profile -> My Orders </strong>.
                 </p>
                 <br>
-                <img class="wiki-img" src="Assets/checkout.png" alt="Screenshot showing the cart." />
+                <img class="wiki-img" src="/Assets/checkout.png" alt="Screenshot showing the cart." />
             </div>
         </div>
     </section>

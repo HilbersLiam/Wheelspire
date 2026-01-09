@@ -14,7 +14,7 @@ $orders = $ordersobj->getOrders($_SESSION["userid"]);
 <html lang="en">
 
 <head>
-    <title>Project</title>
+    <title>Wheelspire | My Orders</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/profile.css">
     <link rel="stylesheet" href="styles/orders.css">
@@ -79,7 +79,7 @@ $orders = $ordersobj->getOrders($_SESSION["userid"]);
                                         <p class="order-items-name"><?= htmlspecialchars($item['name']) ?></p>
                                         <p class="order-items-info"><?= "Description: " .  htmlspecialchars($item['description']) ?></p>
                                         <p class="order-items-info"><?= "Quantity: " . htmlspecialchars($item['quantity']) . "x" . " = " . htmlspecialchars($item['quantity']) * htmlspecialchars($item['price']) . "CAD" ?></p>
-                                        <p class="order-items-info"><?= "Option: " .  htmlspecialchars($item['option']) ?></p>
+                                        <p class="order-items-info"><?= "Option: " .  htmlspecialchars($item['product_option']) ?></p>
                                     </div>
                                 </div>
                             <?php

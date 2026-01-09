@@ -1,10 +1,10 @@
 <?php
-require_once '../config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
 // Important! - Requires order matters, the Database has to be loaded first and then UserHandler before Login can be used.
-require_once "../Classes/Dbh.php";
-require_once "../Classes/UserHandler.php";
-require_once "../Classes/Profile.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/Classes/Dbh.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/Classes/UserHandler.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/Classes/Profile.php";
 // Check if there is a POST request coming in
 if (isset($_POST['edit-name'])) {
 
@@ -29,7 +29,7 @@ if (isset($_POST['edit-name'])) {
     }
     if ($form_messages) {
         $_SESSION["change_name_messages"] = $form_messages;
-        header("Location: ../profile.php");
+        header("Location: /profile.php");
         exit();
     }
 }
@@ -57,7 +57,7 @@ if (isset($_POST['edit-email'])) {
 
     if ($form_messages) {
         $_SESSION["change_email_messages"] = $form_messages;
-        header("Location: ../profile.php");
+        header("Location: /profile.php");
         exit();
     }
 }
@@ -84,7 +84,7 @@ if (isset($_POST['edit-password'])) {
 
     if ($form_messages) {
         $_SESSION["change_password_messages"] = $form_messages;
-        header("Location: ../profile.php");
+        header("Location: /profile.php");
         exit();
     }
 }

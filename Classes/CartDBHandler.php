@@ -5,31 +5,31 @@ class CartDBHandler extends Dbh
     private $productid;
     private $userid;
     private $quantity;
-    private $option;
+    private $product_option;
     private $cartResults = [];
 
     // Function to add an item into the cart database.
-    public function insertCart($productid, $userid, $quantity, $option)
+    public function insertCart($productid, $userid, $quantity, $product_option)
     {
         $this->productid = $productid;
         $this->userid = $userid;
         $this->quantity = $quantity;
-        $this->option = $option;
+        $this->product_option = $product_option;
 
-        $query = "INSERT INTO cart(productid, userid, quantity, option) 
-                VALUES(:productid, :userid, :quantity, :option);";
+        $query = "INSERT INTO cart(productid, userid, quantity, product_option) 
+                VALUES(:productid, :userid, :quantity, :product_option);";
         $stmt = $this->connect()->prepare($query);
         $stmt->bindParam(":productid", $this->productid);
         $stmt->bindParam(":userid", $this->userid);
         $stmt->bindParam(":quantity", $this->quantity);
-        $stmt->bindParam(":option", $this->option);
+        $stmt->bindParam(":product_option", $this->product_option);
         $stmt->execute();
     }
         // Function to get the cart by userid
     public function getCart($userid)
     {
-        $query = "SELECT cart.quantity, cart.option, products.productid, products.price, products.name, products.price, products.image_url
-                FROM cart  
+        $query = "SELECT cart.quantity, cart.product_option, products.productid, products.price, products.name, products.price, products.image_url
+                FROM cart 
                 INNER JOIN products ON cart.productid=products.productid;
                 WHERE userid=:userid";
 

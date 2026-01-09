@@ -17,7 +17,7 @@ unset($_SESSION["change_password_messages"]);
 <html lang="en">
 
 <head>
-    <title>Project</title>
+    <title>Wheelspire | Profile</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/profile.css">
     <link rel="stylesheet" href="styles/form.css">

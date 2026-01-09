@@ -29,14 +29,14 @@
                     The email has to be a unique email and it can't already be taken by another user.
                 </p>
                 <br>
-                <img class="wiki-img" src="Assets/profile-image.png" alt="Screenshot showing the cart." />
+                <img class="wiki-img" src="/Assets/profile-image.png" alt="Screenshot showing the cart." />
                 <br><br>
                 <h3 class="wiki-headers">Step 2: Viewing Your Orders</h3>
                 <p class="wiki-p">
                     Once you've placed an order you can view it in your <strong> Profile -> My Orders </strong> page. If you don't know how to place an order, follow this <a class="wiki-links" href="wiki/placeorders.php"> guide</a>.
                 </p>
                 <br>
-                <img class="wiki-img" src="Assets/view-orders.png" alt="Screenshot showing the cart." />
+                <img class="wiki-img" src="/Assets/view-orders.png" alt="Screenshot showing the cart." />
             </div>
         </div>
     </section>

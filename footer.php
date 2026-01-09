@@ -5,8 +5,6 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/products.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -25,22 +23,23 @@
                 <div class="footer-links">
                     <p>Company</p>
                     <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Signup</a>
-                    <a href="#">Login</a>
+                    <a href="about.php">About</a>
+                    <a href="signupform.php">Signup</a>
+                    <a href="loginform.php">Login</a>
                 </div>
                 <div class="footer-links">
                     <p>Get Help</p>
-                    <a>Wiki</a>
-                    <a>Other</a>
+                    <a href="wiki/gettingstarted.php">Wiki</a>
+                    <a href="wiki/manageaccount.php">Manage Account</a>
+                    <a href="wiki/placeorders.php">Place Orders</a>
                 </div>
                 <div class="footer-links">
                     <p>Products</p>
-                    <a href="/project/Categories/ferrari.php">Ferarri</a>
-                    <a href="/project/Categories/lamborghini.php">Lamborghini</a>
-                    <a href="/project/Categories/mustang.php">Mustang</a>
-                    <a href="/project/Categories/nissan.php">Nissan</a>
-                    <a href="/project/Categories/porsche.php">Porsche</a>
+                    <a href="Categories/ferrari.php">Ferarri</a>
+                    <a href="Categories/lamborghini.php">Lamborghini</a>
+                    <a href="Categories/mustang.php">Mustang</a>
+                    <a href="Categories/nissan.php">Nissan</a>
+                    <a href="Categories/porsche.php">Porsche</a>
                 </div>
             </div>
             <hr>

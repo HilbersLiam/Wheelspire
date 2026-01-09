@@ -5,7 +5,7 @@ $productsobj = new Products();
 
 // start the session before any html.
 if (session_status() === PHP_SESSION_NONE) {
-    include_once "config.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/config.php";
 }
 
 ?>

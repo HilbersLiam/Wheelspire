@@ -26,7 +26,7 @@ if (isset($_SESSION['userid'])) {
 <html lang="en">
 
 <head>
-    <title>Project</title>
+    <title>Wheelspire | Checkout</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 

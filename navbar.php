@@ -5,6 +5,11 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 unset($_SESSION["errors_cart"]);
+
+if (!defined('BASE_URL')) {
+    define('BASE_URL', '/');
+}
+
 // Require the classes needed to handle the cart
 require_once "Classes/Dbh.php";
 require_once "Classes/CartDBHandler.php";
@@ -27,25 +32,25 @@ if (isset($_SESSION['userid'])) {
 <html lang="en">
 
 <head>
-    <base href="https://wheelspire.page.gd/">
     <title>Navbar</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/cart.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 
     <!-- Function to show the dropdown for the cart or login on click -->
-    <script src="javascript/navbar.js" defer></script>
-    <script src="javascript/themes.js" defer></script>
+    <script src="/javascript/navbar.js" defer></script>
+    <script src="/javascript/themes.js" defer></script>
 </head>
 <?php
 
 // If the user clicks the logout button destroy the session and send them to the login page.
 if (isset($_POST["logout"])) {
     session_destroy();
-    header("Location: loginform.php");
+    header("Location: /loginform.php");
     exit();
 }
 ?>
@@ -62,8 +67,8 @@ if (isset($_POST["logout"])) {
             </div>
             <!-- Left side div to seperate the left side links from the right side links (Home, Wiki, Products)-->
             <div class="left-side">
-                <a class="links" href="index.php">Home</a>
-                <a class="links" href="about.php">About</a>
+                <a class="links" href="/index.php">Home</a>
+                <a class="links" href="/about.php">About</a>
                 <div class="dropdown">
                     <!-- When the user clicks the products button, the displayContent function will set the display to flex, default is set to none to hide the content.-->
                     <a class="links" onclick="displayContent('products-dropdown')" id="icons">
@@ -73,28 +78,28 @@ if (isset($_POST["logout"])) {
                     <div class="dropdown-products" id="products-dropdown">
 
                         <!-- Links to send user to the different categories for products-->
-                        <a class="dropdown-links" onclick="closeDropdown()" href="Categories/all-products.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/Categories/all-products.php">
                             <span>All Products </span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="Categories/audi.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/Categories/audi.php">
                             <span>Audi </span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="Categories/bmw.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/Categories/bmw.php">
                             <span>BMW </span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="Categories/ferrari.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/Categories/ferrari.php">
                             <span>Ferrari </span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="Categories/lamborghini.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/Categories/lamborghini.php">
                             <span>Lamborghini</span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="Categories/mustang.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/Categories/mustang.php">
                             <span>Mustang</span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="Categories/porsche.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/Categories/porsche.php">
                             <span>Porsche</span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="Categories/nissan.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/Categories/nissan.php">
                             <span>Nissan</span>
                         </a>
                     </div>
@@ -108,13 +113,13 @@ if (isset($_POST["logout"])) {
                     <div class="dropdown-content" id="videos-dropdown">
 
                         <!-- Links to send user to the different videos-->
-                        <a class="dropdown-links" onclick="closeDropdown()" href="videos/howtoclean.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/videos/howtoclean.php">
                             <span>How To Clean</span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="videos/about.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/videos/about.php">
                             <span>About Car Models </span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="videos/howtodisplay.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/videos/howtodisplay.php">
                             <span>How To Display</span>
                         </a>
 
@@ -129,19 +134,19 @@ if (isset($_POST["logout"])) {
                     <div class="dropdown-products" id="wiki-dropdown">
 
                         <!-- Links to send user to the different wiki-->
-                        <a class="dropdown-links" onclick="closeDropdown()" href="wiki/gettingstarted.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/wiki/gettingstarted.php">
                             <span>Getting Started</span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="wiki/placeorders.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/wiki/placeorders.php">
                             <span>Placing Orders</span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="wiki/manageaccount.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/wiki/manageaccount.php">
                             <span>Managing Your Account</span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="wiki/updateproducts.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/wiki/updateproducts.php">
                             <span>Updating Products</span>
                         </a>
-                        <a class="dropdown-links" onclick="closeDropdown()" href="wiki/manageusers.php">
+                        <a class="dropdown-links" onclick="closeDropdown()" href="/wiki/manageusers.php">
                             <span>Manage Users</span>
                         </a>
                     </div>
@@ -155,26 +160,26 @@ if (isset($_POST["logout"])) {
                     <div class="dropdown">
                         <!-- When the user clicks the profile button, the displayContent function will set the display to flex, default is set to none to hide the content.-->
                         <a class="links" onclick="displayContent('profile-dropdown')" id="icons">
-                            <img id="login" src="Assets/Login-icon.svg" alt="Login" />
+                            <img id="login" src="/Assets/Login-icon.svg" alt="Login" />
                             <span>Profile</span>
                         </a>
                         <!-- This is content that will be displayed on click.-->
                         <div class="dropdown-content" id="profile-dropdown">
                             <!-- Link to send user to edit profile section.-->
-                            <a class="profile-links" href="profile.php">
-                                <img id="edit-profile" src="Assets/edit-profile.svg" alt="Profile" />
+                            <a class="profile-links" href="/profile.php">
+                                <img id="edit-profile" src="/Assets/edit-profile.svg" alt="Profile" />
                                 <span> Edit Profile </span>
                             </a>
                             <!-- Link to send user to their orders..-->
-                            <a class="profile-links" href="orders.php">
-                                <img id="view-orders" src="Assets/view-orders.svg" alt="Orders" />
+                            <a class="profile-links" href="/orders.php">
+                                <img id="view-orders" src="/Assets/view-orders.svg" alt="Orders" />
                                 <span>Your Orders</span>
                             </a>
                             <hr>
                             <!-- Logout button that will send a post request to PHP to destroy the session.-->
                             <form method="post">
                                 <button type="submit" name="logout" class="logout-button">
-                                    <img id="logout-button" src="Assets/logout-button.svg" />
+                                    <img id="logout-button" src="/Assets/logout-button.svg" />
                                     <span>Logout </span>
                                 </button>
                             </form>
@@ -183,7 +188,7 @@ if (isset($_POST["logout"])) {
                     <!-- Display the cart if the user is logged in.-->
                     <div class="dropdown">
                         <a class="links" onclick="displayContent('cart-dropdown')" id="icons">
-                            <img id="cart" src="Assets/ShoppingCart.svg" alt="Shopping Cart" />
+                            <img id="cart" src="/Assets/ShoppingCart.svg" alt="Shopping Cart" />
                             <span>Cart</span>
                             <!-- Display the current count of items in the users cart next to the cart icon on the navbar.-->
                             <span class="cart-count"> <?php echo htmlspecialchars($_SESSION['cart-count']) ?></span>
@@ -208,7 +213,7 @@ if (isset($_POST["logout"])) {
                                     <?php $cartobj->renderCart($_SESSION['userid']) ?>
                                 </div>
                                 <div class="cart-bottom-buttons">
-                                    <form class="cart-submit" method="post" action="includes/cart.inc.php">
+                                    <form class="cart-submit" method="post" action="/includes/cart.inc.php">
                                         <input type="hidden" name="current_page" value="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                                         <input type="submit" class="clear-cart" name="clear_cart" value="Clear Cart">
                                         <input type="submit" class="checkout-cart" name="checkout" value="Checkout">
@@ -220,12 +225,12 @@ if (isset($_POST["logout"])) {
 
                     <!-- If the user is not logged in then display the Signup link and Login link.-->
                 <?php else: ?>
-                    <a class="links" href="signupform.php" id="icons">
-                        <img id="signup" src="Assets/Signup-icon.svg" alt="Signup" />
+                    <a class="links" href="/signupform.php" id="icons">
+                        <img id="signup" src="/Assets/Signup-icon.svg" alt="Signup" />
                         <span>Signup</span>
                     </a>
-                    <a class="links" href="loginform.php" id="icons">
-                        <img id="login" src="Assets/Login-icon.svg" alt="Login" />
+                    <a class="links" href="/loginform.php" id="icons">
+                        <img id="login" src="/Assets/Login-icon.svg" alt="Login" />
                         <span>Login</span>
                     </a>
                 <?php endif; ?>

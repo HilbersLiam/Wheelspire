@@ -1,10 +1,14 @@
 <?php
+if (!defined('BASE_URL')) {
+    define('BASE_URL', '/');
+}
+
 // Start session if not already started and include configuration and class files
 if (session_status() === PHP_SESSION_NONE) {
-    include_once "../config.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/config.php";
 }
-require_once "../Classes/Dbh.php";  // Database connection class
-require_once "../Classes/Admin.php"; // Admin class with admin  DB functions
+require_once $_SERVER['DOCUMENT_ROOT'] . "/Classes/Dbh.php";  // Database connection class
+require_once $_SERVER['DOCUMENT_ROOT'] . "/Classes/Admin.php"; // Admin class with admin  DB functions
 
 $adminObj = new Admin(); // Create instance of Admin to use its methods
 
@@ -13,37 +17,36 @@ $adminObj = new Admin(); // Create instance of Admin to use its methods
 <html lang="en">
 
 <head>
-    <base href="https://wheelspire.page.gd/">
     <title>Admin Page</title>
     <!-- CSS stylesheets and Google Fonts -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/admin.css">
 </head>
 
 <body>
-    <?php if ($_SESSION['user_role'] == 'admin') { // Only allow access if user is admin 
+    <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') { // Show admin dashboard only if user is admin 
     ?>
         <div class="sidebar">
             <!-- Sidebar navigation for admin -->
-            <img class="sidebar-logo" src="Assets/Logo-darkmode.svg" alt="darkmode logo" />
-            <a href="admin/index.php" class="link">
-                <img src="Assets/Admin-Images/dashboard-icon.svg" alt="Dashboard Icon" />
+            <img class="sidebar-logo" src="/Assets/Logo-darkmode.svg" alt="darkmode logo" />
+            <a href="/admin/index.php" class="active-link">
+                <img src="/Assets/Admin-Images/dashboard-icon.svg" alt="Dashboard Icon" />
                 <p>Dashboard</p>
             </a>
-            <a href="admin/manageusers.php" class="link">
-                <img src="Assets/Admin-Images/accounts-icon.svg" alt="Accounts Icon" />
+            <a href="/admin/manageusers.php" class="link">
+                <img src="/Assets/Admin-Images/accounts-icon.svg" alt="Accounts Icon" />
                 <p>Manage Users</p>
             </a>
-            <a href="admin/manageproducts.php" class="active-link">
-                <img src="Assets/Admin-Images/products-icon.svg" alt="Products Icon" />
+            <a href="/admin/manageproducts.php" class="link">
+                <img src="/Assets/Admin-Images/products-icon.svg" alt="Products Icon" />
                 <p>Manage Products</p>
             </a>
-            <a href="admin/serverinformation.php" class="link">
-                <img src="Assets/Admin-Images/server-icon.svg" alt="Server Icon" />
+            <a href="/admin/serverinformation.php" class="link">
+                <img src="/Assets/Admin-Images/server-icon.svg" alt="Server Icon" />
                 <p>Server Information</p>
             </a>
-            <a href="index.php" class="link">
-                <img src="Assets/Admin-Images/home-icon.svg" alt="Home Icon" />
+            <a href="https://wheelspire.liamhilbers.dev/" class="link">
+                <img src="/Assets/Admin-Images/home-icon.svg" alt="Home Icon" />
                 <p>Home Page</p>
             </a>
         </div>

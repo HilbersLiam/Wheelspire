@@ -10,7 +10,7 @@ unset($_SESSION["errors_login"]);
 <html lang="en">
 
 <head>
-    <title>Project</title>
+    <title>Wheelspire | Login</title>
     <link rel="stylesheet" href="styles/form.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

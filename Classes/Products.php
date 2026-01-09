@@ -36,7 +36,7 @@ class Products extends Dbh
                         </span>
                     </div>
                     <div class="cart-form">
-                        <form method="post" action="includes/cart.inc.php">
+                        <form method="post" action="/includes/cart.inc.php">
                             <p class="product-subtitle">Options</p>
 
                             <input type="hidden" name="productid" value="<?= $product["productid"] ?>">

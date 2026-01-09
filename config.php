@@ -6,7 +6,7 @@ ini_set('session.use_only_cookies', 1);
 ini_set('session.use_strict_mode', 1);
 
 // Correct domain
-$domain = 'wheelspire.page.gd';
+$domain = '.wheelspire.liamhilbers.dev';
 
 // Check if HTTPS is used
 $isSecure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
